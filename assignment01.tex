@@ -1,0 +1,38 @@
+\documentclass[15pt]{article}
+\usepackage{kotex}
+\usepackage[pdftex]{graphicx}
+
+\begin{document}
+{\Large \hspace{2cm} How to use the utility git.}\newline
+{\hspace*{8.3cm}융합공학부 디지털이미징}\newline
+{\hspace*{9.6cm}20142740 박세인}
+\newline\newline
+-\textbf{분산제어 방식의 소스 제어 제품}:  \newline
+중앙 서버인 저장소에 의존하지 않고, 네트워크 연결이 되지 않아도 사용 가능하기 때문에, 오프라인이나 원격으로 작업 할 수 있으며, 저장소에 문제가 생겨도 복구가 가증하다. 코드를 지역적으로 커밋고, push를 통해 동기화 된다. 서버의 복사본과 동기화를 통해 지역 사본 또한 완전한 버전 컨트롤 저장소가 된다. 
+\newline\newline -\textbf{Version control system}: \newline
+코드를 수정할 때, 파일의 스냅샷을 영구적으로 저장하여 변경사항들을 추적할 수 있고, 필요할 때 다시 불러낼 수 있는 것을 가능하게 하는 소프트웨어로, 모든 버전들을 아카이빙하면서도 원하는 버전만을 보여주는 것이 가능하다. 또한 이렇게 관리한 내용을 오픈소스로 공유 가능하기 때문에, 개발자의 혼란을 방지하고, 다른 사람과의 협업을 통해 진행하는 프로젝트 진행 시 용이하게 한다.
+\newline\newline
+-\textbf{git의 단계}:\newline
+\textbf{1. patch 생성}\newline
+패치는 작업 내용을 다른 branch나 다른 repository에 반영할 수 있는 형태로 만들기 때문에 충돌같은 문제만 생기지 않는다면 반영이 가능하다. commit하지 않은 내용을 패치로 만들수도 있고, commit한 내용을 피치로 만들 수도 있으며, 여러개의 commit을 하나의 패치로도 만들 수 있다. 주 작업 중인 내용을 임시로 저장하는 용도로 사용한다.\newline\newline
+\textbf{2. reset}\newline
+git의 현재 상태를 특정 시점으로 되돌리는 기능이다. 되돌아가고 싶은 커밋을 선택할 수 있으며, soft, mixed, hard 세 종류가 있다. hard reset은 모든 변경사항을 깔끔하게 되돌려준다.\newline\newline
+\textbf{3.pull}\newline
+앞에서 본인이 작업하기 이전 상태로 돌린 후, pull을 통해 다른 사람들의 최신 작업 내용들을 remote repository로부터 다운받아 local repository의 내용을 최신으로 업데이트 할 수 있다.\newline\newline
+\textbf{4. patch 적용}\newline
+1단계에서 생성한 패치를 반영하는 단계로, 일종의 resotre이다.\newline\newline
+\textbf{5. conflict 처리}\newline
+같은 commit에서 독립적이지 않은 부분을 서로 다르게 수정할 경우 생기는 현상이다. 충돌이 발생하면 git에서 자동으로 충돌이 발생한 부분을 표시해 주며, 에디터나 각종 merge tool을 사용해서 적절하게 수정을 진행해야 한다.\newline\newline
+\textbf{6. commit}\newline
+변경이력을 git에 저장하는 것으로, 변경사항을 그 때 그 때 저장하고, 다시 불러올 수 있다. 
+\newline\newline
+\textbf{7. push}\newline
+결론적으로, 변경점 백업-문제없는 버전으로 리셋-최신버전으로 업데이트-변경점 복원을 통해 문제 해결 및 원활한 개발을 진행할 수 있다.\newline
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{11.png}
+\end{figure}
+참고자료:\newline
+https://tmondev.blog.me/220763012361 \newline
+https://blog.naver.com/doblo77/220394736439\newline
+\end{document}
